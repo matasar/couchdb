@@ -1,0 +1,6 @@
+#!/bin/bash
+
+base_dir=`dirname $0`
+js_src="$base_dir/couchsh.js"
+
+exec couchjs $js_src
