@@ -1,6 +1,9 @@
 Makefile
+Makefile.in
 */Makefile
+*/Makefile.in
 */**/Makefile
+*/**/Makefile.in
 */*.tpl
 */**/*.tpl
 libtool
@@ -20,3 +23,7 @@ src/couchdb/couch.app
 src/couchdb/couchjs
 etc/launchd/org.apache.couchdb.plist
 etc/logrotate.d/couchdb
+*.m4
+configure
+build-aux
+autom4te.cache
