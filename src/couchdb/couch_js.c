@@ -277,7 +277,6 @@ Print(JSContext *context, JSObject *obj, uintN argc, jsval *argv, jsval *rval) {
 }
 
 static JSBool
-<<<<<<< HEAD:src/couchdb/couch_js.c
 Write(JSContext *context, JSObject *obj, uintN argc, jsval *argv, jsval *rval) {
     uintN i;
     size_t cl, bl;
@@ -307,8 +306,6 @@ Write(JSContext *context, JSObject *obj, uintN argc, jsval *argv, jsval *rval) {
 }
 
 static JSBool
-=======
->>>>>>> d9b07280d1723e4f6a051ce91d55e73960e4926c:src/couchdb/couch_js.c
 Quit(JSContext *context, JSObject *obj, uintN argc, jsval *argv, jsval *rval) {
     JS_ConvertArguments(context, argc, argv, "/ i", &gExitCode);
     return JS_FALSE;
@@ -401,7 +398,6 @@ Seal(JSContext *context, JSObject *obj, uintN argc, jsval *argv, jsval *rval) {
     return JS_SealObject(context, target, deep);
 }
 
-<<<<<<< HEAD:src/couchdb/couch_js.c
 static JSBool
 BufferIsCompilable(JSContext *context, JSObject *obj, uintN argc, jsval *argv, jsval *rval) {
   JSString *jsstr;
@@ -451,8 +447,6 @@ LoadScript(JSContext *context, JSObject *obj, uintN argc, jsval *argv, jsval *rv
   return JS_TRUE;
 }
 
-=======
->>>>>>> d9b07280d1723e4f6a051ce91d55e73960e4926c:src/couchdb/couch_js.c
 static void
 ExecuteScript(JSContext *context, JSObject *obj, const char *filename) {
     FILE *file;
@@ -1309,10 +1303,7 @@ main(int argc, const char * argv[]) {
     if (!JS_DefineFunction(context, global, "evalcx", EvalInContext, 0, 0)
      || !JS_DefineFunction(context, global, "gc", GC, 0, 0)
      || !JS_DefineFunction(context, global, "print", Print, 0, 0)
-<<<<<<< HEAD:src/couchdb/couch_js.c
      || !JS_DefineFunction(context, global, "write", Write, 0, 0)
-=======
->>>>>>> d9b07280d1723e4f6a051ce91d55e73960e4926c:src/couchdb/couch_js.c
      || !JS_DefineFunction(context, global, "quit", Quit, 0, 0)
      || !JS_DefineFunction(context, global, "readline", ReadLine, 0, 0)
      || !JS_DefineFunction(context, global, "seal", Seal, 0, 0)
@@ -1322,13 +1313,9 @@ main(int argc, const char * argv[]) {
      || !JS_DefineFunction(context, global, "puthttp", PutHttp, 2, 0)
      || !JS_DefineFunction(context, global, "delhttp", DelHttp, 1, 0)
      || !JS_DefineFunction(context, global, "movehttp", MoveHttp, 1, 0)
-<<<<<<< HEAD:src/couchdb/couch_js.c
      || !JS_DefineFunction(context, global, "copyhttp", CopyHttp, 1, 0)
      || !JS_DefineFunction(context, global, "is_compilable", BufferIsCompilable, 1, 0)
      || !JS_DefineFunction(context, global, "load", LoadScript, 1, 0))
-=======
-     || !JS_DefineFunction(context, global, "copyhttp", CopyHttp, 1, 0))
->>>>>>> d9b07280d1723e4f6a051ce91d55e73960e4926c:src/couchdb/couch_js.c
         return 1;
 
     if (argc != 2) {
